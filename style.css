@@ -1,3 +1,45 @@
+/* color theme */
+:root{
+    --phonk-magenta: #ff005f;
+    --phonk-orange: #ff430a;
+    --phonk-green: #4fce3b;
+    --phonk-gray: #686c8d;
+    --phonk-blue: #00e7ec;
+    --phonk-purple: #6e05be;
+}
+
 .link-github svg{
     height: 20px;   
+}
+
+header {
+    background-color: var(--phonk-magenta);
+}
+
+nav {
+    background-color: var(--phonk-orange);
+}
+
+#about{
+    background-color: var(--phonk-green);
+}
+
+#guidelines{
+    background-color: var(--phonk-blue);
+}
+
+#contribute{
+    background-color: var(--phonk-gray);
+}
+
+.profile{
+    background-color: var(--phonk-purple);
+}
+
+#styles{
+    background-color: var(--phonk-magenta);
+}
+
+footer{
+    background-color: var(--phonk-green);
 }
