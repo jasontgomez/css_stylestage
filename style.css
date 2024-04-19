@@ -28,6 +28,10 @@ html {
 /* grid area */
 body {
     display: grid;
+    height: auto;
+    margin: 0;
+    margin-left: 15%;
+    margin-right: 15%;
     grid-template-areas:
         'header'
         'nav'
@@ -55,8 +59,6 @@ body > nav {
 body > #main {
     grid-area: main-content;
     background-color: #fff;
-    margin-left: 40px;
-    margin-right: 40px;
     /* padding: 40px; */
     /* background-image: linear-gradient(var(--phonk-orange), var(--phonk-magenta) 90%); */
     /* background-color: var(--phonk-gray); */
@@ -73,6 +75,7 @@ body > footer {
 /* mobile */
 @media (min-width:768px) {
     body {
+        height: auto;
         grid-template-columns:repeat(4, 1fr);
         grid-template-areas:
             'header header header header'
@@ -97,8 +100,18 @@ body > footer {
 /* aside */
 .profile > .container, #styles > .container{
     background-color: var(--phonk-green);
-    margin-left: 40px;
     padding: 40px;
+}
+
+aside.profile > .container {
+    position: sticky;
+    top: 0px;
+    height: auto;
+}
+aside#styles > .container {
+    position: sticky;
+    top: 0px;
+    height: auto;
 }
 
 /* articles */
@@ -121,19 +134,35 @@ article#contribute {
 
 
 /* header and nav bar */
-
 header > .container {
-    background-color: #fff;
+    color: #fff;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
 }
 
 nav > ul{
     list-style: none;
     display: flex; 
     background-color: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: 0;
     width: 100%;
     justify-content: space-around;
+    padding-left: 0;
 }
+
+nav > ul > li {
+    flex-basis: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 120px;
+    margin: 0;
+}
+a { 
+    color: inherit;
+} 
