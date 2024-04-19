@@ -27,11 +27,8 @@ html {
 
 /* grid area */
 body {
-    display: grid;
     height: auto;
     margin: 0;
-    margin-left: 15%;
-    margin-right: 15%;
     grid-template-areas:
         'header'
         'nav'
@@ -75,6 +72,9 @@ body > footer {
 /* mobile */
 @media (min-width:768px) {
     body {
+        display: grid;
+        margin-left: 15%;
+        margin-right: 15%;
         height: auto;
         grid-template-columns:repeat(4, 1fr);
         grid-template-areas:
@@ -165,7 +165,6 @@ nav > ul > li {
 h2 {
     font-size: 2rem;
 }
-
 h1 {
     font-size: 120px;
     margin: 0;
@@ -175,53 +174,20 @@ a {
 } 
 
 
+/* typewriter effect https://css-tricks.com/snippets/css/typewriter-effect/ */
 header > .container > h2 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid var(--phonk-blue); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    overflow: hidden;
+    /* border-right: .15em solid var(--phonk-blue); */
+    white-space: nowrap; 
+    margin: 0 auto;
     animation: 
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end;
+        typing 3.5s steps(40, end);
 }
-  
   /* The typing effect */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    50% { border-color: var(--phonk-blue); }
-    100% { border-right: transparent }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* @keyframes animate_text {
-    from {
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      transform: translate3d(-100%, 0, 0);
-    }
-}
-header > .container > h2 {
-    right: 100px;
-    text-align: right;
-    animation: animate_text 10s linear infinite;
-
-} */
 
 /* blockquote */
 blockquote {
@@ -232,14 +198,7 @@ blockquote {
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 30px;
-
-
-/*     border-image: linear-gradient(to right, red, orange) 30;
-    border-width: 4px;
-    border-style: solid;
-    background-size: cover; */
 }
-
 blockquote::before {
     content: "";
     position: absolute;
@@ -252,4 +211,35 @@ blockquote::before {
        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
             mask-composite: exclude; 
-  }
+}
+
+/* article list */
+article#about > .container > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: space-between;
+}
+article#about > .container > ul > li {
+    padding: 20px;
+    color: var(--phonk-purple);
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+}
+article#about > .container > ul > li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 5px; 
+    padding: 5px; 
+    background: linear-gradient(#fff, rgba(var(--hex-purple), 0.6));
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+}
+
