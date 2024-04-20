@@ -1,10 +1,8 @@
 /* color theme */
 :root{
-    /* --phonk-magenta: #ff005f; */
     --phonk-magenta: #f82dd2;
     --phonk-orange: #ff430a;
     --phonk-green: #4fce3b;
-    /* --phonk-gray: #686c8d; */
     --phonk-gray: #37095d;
     --phonk-blue: #00e7ec;
     --phonk-purple: #6e05be;
@@ -13,6 +11,7 @@
     --hex-purple: 192, 77, 223;
     --hex-blue: 0, 231, 236;
     --hex-magenta: 248, 45, 210;
+    --hex-green: 79, 206, 59;
 }
 
 html {
@@ -99,9 +98,10 @@ body > footer {
 }
 /* aside */
 .profile > .container, #styles > .container{
-    background-color: var(--phonk-green);
+    background-color: rgba(var(--hex-green), 1);
     padding: 40px;
 }
+
 
 aside.profile > .container {
     position: sticky;
@@ -132,6 +132,26 @@ article#contribute {
     background-image: linear-gradient(rgba(var(--hex-blue), 0.6), #fff, 97%, var(--phonk-magenta));
 }
 
+a:link { 
+    text-decoration: none; 
+} 
+a:visited { 
+    text-decoration: none; 
+} 
+a:hover { 
+    text-decoration: none; 
+} 
+a:active { 
+    text-decoration: none; 
+}
+/* links */
+a { 
+    text-decoration: none; 
+    color: rgba(1, 1, 122, 0.9);
+    font-weight: bolder;
+} 
+
+
 
 /* header and nav bar */
 header > .container {
@@ -142,7 +162,6 @@ header > .container {
     white-space: nowrap;
     display: flex;
 }
-
 nav > ul{
     list-style: none;
     display: flex; 
@@ -152,30 +171,45 @@ nav > ul{
     justify-content: space-around;
     padding-left: 0;
 }
-
 nav > ul > li {
     flex-basis: 100%;
+    background-image: #fff;
     height: 100%;
     display: flex;
     align-items: center;
     min-height: 70px;
     justify-content: center;
 }
-
-h2 {
-    font-size: 2rem;
+nav > ul > li > a {
+    position: relative;
+    font-size: 1.4rem;
+    padding: 5px 0;
+    color: black;
 }
+nav > ul > li:hover {
+    background: linear-gradient(to bottom right, rgba(var(--hex-purple), 0.9), 20%, rgba(var(--hex-orange), 0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+} 
+header a {
+    color: #fff;
+}
+
+h2, h3 {
+    font-size: 3rem;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
 h1 {
     font-size: 120px;
     margin: 0;
 }
-a { 
-    color: inherit;
-} 
-
 
 /* typewriter effect https://css-tricks.com/snippets/css/typewriter-effect/ */
 header > .container > h2 {
+    font-size: 2rem;
     overflow: hidden;
     /* border-right: .15em solid var(--phonk-blue); */
     white-space: nowrap; 
