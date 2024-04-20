@@ -68,27 +68,6 @@ body > #styles {
 body > footer {
     grid-area: footer
 }
-/* mobile */
-@media (min-width:768px) {
-    body {
-        display: grid;
-        margin-left: 15%;
-        margin-right: 15%;
-        height: auto;
-        grid-template-columns:repeat(4, 1fr);
-        grid-template-areas:
-            'header header header header'
-            'nav nav nav nav'
-            'left-aside-1 main-content main-content main-content'
-            'left-aside-2 main-content main-content main-content'
-            'footer footer footer footer';
-            /* background-image: linear-gradient(var(--phonk-gray), 80%, var(--phonk-magenta)); */
-            background-image: url("img/neon.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-    }
-}
 
 /* all container */
 .container {
@@ -102,6 +81,9 @@ body > footer {
     padding: 40px;
 }
 
+aside {
+    background-color: rgba(var(--hex-green), 0.7);
+}
 
 aside.profile > .container {
     position: sticky;
@@ -129,7 +111,7 @@ article#guidelines {
 }
 
 article#contribute {
-    background-image: linear-gradient(rgba(var(--hex-blue), 0.6), #fff, 97%, var(--phonk-magenta));
+    background-image: linear-gradient(rgba(var(--hex-blue), 0.6), #fff);
 }
 
 a:link { 
@@ -170,6 +152,8 @@ nav > ul{
     width: 100%;
     justify-content: space-around;
     padding-left: 0;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
 }
 nav > ul > li {
     flex-basis: 100%;
@@ -277,3 +261,54 @@ article#about > .container > ul > li::before {
             mask-composite: exclude; 
 }
 
+/* footer */
+.page-footer {
+    background: #fff;
+    padding: 40px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+/* skip */
+.skip-link {
+    position: absolute;
+    top: 8px;
+    color: #fff;
+}
+
+
+
+/* big screen */
+@media (min-width:768px) {
+    body {
+        display: grid;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        height: auto;
+        background-color: none;
+        grid-template-columns:repeat(4, 1fr);
+        grid-template-areas:
+            'header header header header'
+            'nav nav nav nav'
+            'left-aside-1 main-content main-content main-content'
+            'left-aside-2 main-content main-content main-content'
+            'footer footer footer footer';
+            /* background-image: linear-gradient(var(--phonk-gray), 80%, var(--phonk-magenta)); */
+            background-image: url("img/neon.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+    }
+}
+@media (max-width:767px){
+    header {
+        background-color: black;
+        padding: 40px;
+    }
+
+    header > .container, header > .container > h2 {
+        white-space: normal;
+    }
+}
